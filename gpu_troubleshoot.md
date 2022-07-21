@@ -2,36 +2,28 @@ on ubuntu 24.04 gcp vm:
 
 1. if nvidia-smi can' connect to driver, driver is not loaded:
 
-Please
 
-run
-> sudo prime-select nvidia
-run
-> grep nvidia /etc/modprobe.d/* /lib/modprobe.d/*
-to find a file containing
-
-blacklist nvidia
-and remove it,
-> sudo rm <file loc>
-then run
-
-> sudo update-initramfs -u
-and reboot
-> sudo reboot
-
-If it still doesn't solve the issue:
 
 > sudo apt update
+
 > sudo apt remove '^nvidia'
-> sudo apt-get purge 'nvidia*
+ 
+> sudo apt-get purge 'nvidia*'
+ 
 > sudo apt autoremove
+
 > sudo reboot
-or recommended
+
+then run
+
 > sudo apt install nvidia-driver-470 libnvidia-gl-470 libnvidia-compute-470 libnvidia-decode-470 libnvidia-encode-470 libnvidia-ifr1-470 libnvidia-fbc1-470
+
 >sudo reboot
 
 
 helper links:
+
+https://askubuntu.com/questions/1370843/how-to-properly-install-nvidia-470-drivers-on-ubuntu-20-04 [working]
 
 https://dev.to/simonpham/how-to-fix-ubuntu-nvidia-driver-is-not-loaded-2ipp
 
